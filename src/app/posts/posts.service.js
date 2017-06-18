@@ -6,11 +6,11 @@ export class PostService {
     let list = [];
     list = [
       {
-        title: 'Post1',
+        title: 'Post021',
         description: 'details du Post1'
       },
       {
-        title: 'Post2',
+        title: 'Post022',
         description: 'details du Post2'
       }
     ];
