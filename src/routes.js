@@ -14,8 +14,8 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/posts',
       component: 'postsList'
     })
-    .state('postdetail', {
-      url: '/details',
-      template: '<movies-list></movies-list>'
+    .state('detailPost', {
+      url: '/details/:postId',
+      component: 'postDetail'
     });
 }

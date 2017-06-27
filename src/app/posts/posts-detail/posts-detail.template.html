@@ -1,0 +1,28 @@
+<h3>Detail du poste </h3>
+<div max-width="300px;">
+  <form class="css-form" name="postForm">
+    <input type="text" name="title" ng-model="pdctrl.post.title" style="width:300px;" required><br/>
+    <textarea ng-model="pdctrl.post.body" style="width: 500px; height: 150px;"></textarea>
+  </form>
+</div>
+<button ng-click="pdctrl.editPost(pdctrl.post)">Editer</button>
+<a ui-sref="postsList">Back</a>
+
+<user-posts-number userid="{{pdctrl.post.userId}}"></user-posts-number>
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .css-form input.ng-invalid.ng-touched {
+    background-color: #FA787E;
+  }
+
+  .css-form input.ng-valid.ng-touched {
+    background-color: #78FA89;
+  }
+</style>

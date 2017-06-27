@@ -1,15 +1,20 @@
-export const postsListComponenent = {
+export const PostsListComponenent = {
   bindings: {
   },
   templateUrl: './app/posts/posts-list/posts-list.template.html',
   controllerAs: 'plist',
   controller: class postsListController {
-    constructor(PostService) {
+    constructor(PostService, $stateParams) {
       this.PostService = PostService;
-      this.init();
+      this.$stateParams = $stateParams;
+      this.list = 'aa';
+      this.getPostsList();
     }
-    init() {
-      this.list = this.PostService.getPostsList();
+    getPostsList() {
+      this.PostService.getPostsList().then(response => {
+        this.list = response.data;
+        this.postId = this.$stateParams.postId;
+      });
     }
   }
 };

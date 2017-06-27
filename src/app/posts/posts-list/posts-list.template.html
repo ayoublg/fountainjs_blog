@@ -1,4 +1,8 @@
-Liste des postes
+<h3>Liste des postes : </h3>
+Selected Post Id : {{plist.postId}} -
 <ul>
-	<li ng-repeat="post in plist.list">{{post.title}}</li>
+	<li ng-repeat="post in plist.list" max-width="200px;">
+	  <a ui-sref="detailPost({postId: post.id})">{{post.title}}</a>
+	  <div max-width="300px;">{{post.body}}...</div>
+	</li>
 </ul>
