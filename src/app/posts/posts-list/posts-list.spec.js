@@ -3,27 +3,30 @@
  */
 import angular from 'angular';
 import 'angular-mocks';
-import {PostsListComponenent} from './posts-list.component';
-// import '../posts.module';
+import '../posts.module';
 
 describe('Posts List component', () => {
-  // let component;
+  let http;
+  let component;
   beforeEach(() => {
-    angular
-      .module('PLC', ['app/posts/posts-list/posts-list.template.html'])
-      .component('PLC', PostsListComponenent);
-    angular.mock.module('PLC');
+    angular.mock.module('postsMod');
   });
-  /* beforeEach(angular.mock.inject($componentController => {
-    component = $componentController('PLC', {}, {});
-  })); */
-  it('should fill a list of posts', angular.mock.inject(($rootScope, $compile) => {
-    const $scope = $rootScope.$new();
-    const element = $compile('<todo-item></todo-item>')($scope);
-    $scope.$digest();
-    const li = element.find('li');
-    expect(li).not.toBeNull();
-    // component = $componentController('PLC', {}, {});
-    // expect(component.list).toEqual(44);
+  beforeEach(angular.mock.inject($httpBackend => {
+    http = $httpBackend;
   }));
+
+  it('should fill a list of posts', angular.mock.inject($componentController => {
+    http
+      .when('GET', 'https://jsonplaceholder.typicode.com/posts')
+      .respond(200, {data: 'value'});
+    component = $componentController('postsList', {$stateParams: {id: '...'}}, {});
+    http.flush();
+    expect(component.list).toEqual({data: 'value'});
+  }));
+
+  it('getPostsList should been called', () => {
+    spyOn(component, 'getPostsList');
+    component.getPostsList();
+    expect(component.getPostsList).toHaveBeenCalled();
+  });
 });

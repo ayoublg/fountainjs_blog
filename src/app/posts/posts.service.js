@@ -18,4 +18,7 @@ export class PostService {
   getPostsByUser(userId) {
     return this.$http.get(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`);
   }
+  add(post) {
+    return this.$http.post(`https://jsonplaceholder.typicode.com/posts/`, post);
+  }
 }

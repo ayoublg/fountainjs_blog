@@ -1,21 +1,22 @@
-<h3>Detail du poste </h3>
+<a ui-sref="postsList" class="btn btn-primary"><-- Back</a>
+<h3>Post detail </h3><user-posts-number style="float: right" userid="{{pdctrl.post.userId}}"></user-posts-number>
 <div max-width="300px;">
   <form class="css-form" name="postForm">
-    <input type="text" name="title" ng-model="pdctrl.post.title" style="width:300px;" required><br/>
-    <textarea ng-model="pdctrl.post.body" style="width: 500px; height: 150px;"></textarea>
+    <table>
+      <tr><td>Title :</td><td> <input type="text" name="title" ng-model="pdctrl.post.title" style="width:300px;" required></td></tr>
+      <tr><td>Description : </td><td><textarea ng-model="pdctrl.post.body" style="width: 500px; height: 150px;"></textarea></td></tr>
+    </table>
   </form>
 </div>
 <button ng-click="pdctrl.editPost(pdctrl.post)">Editer</button>
-<a ui-sref="postsList">Back</a>
+<div class="alert alert-success" ng-if="pdctrl.editResponse">
+  <strong>Success!</strong> Post edited successfully {{pdctrl.editResponse | json}}
+</div>
 
-<user-posts-number userid="{{pdctrl.post.userId}}"></user-posts-number>
-
-
-
-
-
-
-
+<br>
+<span ng-if="pdctrl.post.id">
+<post-comments post-id="{{pdctrl.post.id}}"></post-comments>
+</span>
 
 <style type="text/css">
   .css-form input.ng-invalid.ng-touched {

@@ -5,9 +5,10 @@ class PostDetailController {
   constructor(PostService, $stateParams) {
     this.$stateParams = $stateParams;
     this.PostService = PostService;
+  }
+  $onInit() {
     this.getPost(this.$stateParams.postId);
   }
-
   getPost(postId) {
     this.PostService.getPostById(postId).then(response => {
       this.post = response.data;
@@ -16,7 +17,7 @@ class PostDetailController {
   editPost(post) {
     this.PostService.setPost(post).then(response => {
       this.valid = 'poste modifié';
-      this.response = response.data;
+      this.editResponse = response.data;
     });
   }
 }

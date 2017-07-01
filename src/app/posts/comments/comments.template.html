@@ -1,0 +1,11 @@
+<h3>Comments</h3> :
+<span ng-init="cc.getCommentsByPostId(cc.postId)">
+  <ul>
+    <li ng-repeat="com in cc.commentList" class="panel panel-default">
+      <b>Author</b> : {{com.name}} (<b>email</b> : {{com.email}})
+      <div class="panel-body">
+        {{com.body}}
+      </div>
+    </li>
+  </ul>
+</span>

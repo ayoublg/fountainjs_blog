@@ -2,7 +2,7 @@ export function UserPostsNumber() {
   return {
     restrict: 'E',
     scope: {},
-    template: '<h2><button ng-click="vm.getPostNumber()">Calc Number of user posts</button>nombre : {{vm.number}}</h2>',
+    template: '<button ng-click="vm.getPostNumber()">Calc Number of user posts</button><br>nombre : {{vm.number}}',
     controller: UserPNumberController,
     controllerAs: 'vm',
     bindToController: {

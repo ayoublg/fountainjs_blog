@@ -11,7 +11,7 @@ import {header} from './app/header';
 import {title} from './app/title';
 import {footer} from './app/footer';
 
-import {PostsListComponenent} from './app/posts/posts-list/posts-list.component';
+// import {PostsListComponenent} from './app/posts/posts-list/posts-list.component';
 
 import './index.css';
 
@@ -21,5 +21,4 @@ angular
   .component('app', main)
   .component('fountainHeader', header)
   .component('fountainTitle', title)
-  .component('fountainFooter', footer)
-  .component('PLC', PostsListComponenent);
+  .component('fountainFooter', footer);

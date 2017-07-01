@@ -7,7 +7,10 @@ export const PostsListComponenent = {
     constructor(PostService, $stateParams) {
       this.PostService = PostService;
       this.$stateParams = $stateParams;
+    }
+    $onInit() {
       this.list = 'aa';
+      this.response = false;
       this.getPostsList();
     }
     getPostsList() {
@@ -15,6 +18,13 @@ export const PostsListComponenent = {
         this.list = response.data;
         this.postId = this.$stateParams.postId;
       });
+    }
+    addPost(postForm) {
+      if (postForm.$valid) {
+        this.PostService.add(this.p).then(response => {
+          this.response = 'Post Ajouté : ' + angular.toJson(response.data);
+        });
+      }
     }
   }
 };
