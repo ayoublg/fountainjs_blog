@@ -1,4 +1,4 @@
-import angular from 'angular';
+/* import angular from 'angular';
 import 'angular-mocks';
 import {main} from './main';
 
@@ -18,4 +18,4 @@ describe('main component', () => {
     expect(element.find('fountain-techs').length).toEqual(1);
     expect(element.find('fountain-footer').length).toEqual(1);
   }));
-});
+}); */

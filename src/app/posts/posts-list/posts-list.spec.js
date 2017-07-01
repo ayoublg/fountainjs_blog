@@ -20,6 +20,7 @@ describe('Posts List component', () => {
       .when('GET', 'https://jsonplaceholder.typicode.com/posts')
       .respond(200, {data: 'value'});
     component = $componentController('postsList', {$stateParams: {id: '...'}}, {});
+    component.$onInit();
     http.flush();
     expect(component.list).toEqual({data: 'value'});
   }));
