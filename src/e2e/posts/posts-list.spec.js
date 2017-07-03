@@ -1,8 +1,17 @@
-/**
- * Created by Ayoub on 01/07/2017.
- */
-describe('Posts list', () => {
-  it('Should redirect to post detail', () => {
-    expect(1).toBe(1);
+describe('Poste click', () => {
+  beforeEach(function() {
+    browser.get('http://localhost:3000/posts');
+  });
+
+
+  it('Should go to detail post', () => {
+    let link = element.all(by.tagName('a')).first();
+    link.getAttribute('href').then(function(text) {
+      let post_id = text.substr(text.indexOf("details/") + text.length);
+      link.click();
+      expect(browser.getCurrentUrl()).toContain('/details/' + post_id);
+    });;
+
   });
 });
+

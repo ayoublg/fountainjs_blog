@@ -1,6 +1,3 @@
-/**
- * Created by Ayoub on 24/06/2017.
- */
 class PostDetailController {
   constructor(PostService, $stateParams) {
     this.$stateParams = $stateParams;

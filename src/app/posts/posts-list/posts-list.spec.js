@@ -1,6 +1,3 @@
-/**
- * Created by Ayoub on 27/06/2017.
- */
 import angular from 'angular';
 import 'angular-mocks';
 import '../posts.module';

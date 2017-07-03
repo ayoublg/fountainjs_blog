@@ -1,6 +1,3 @@
-/**
- * Created by Ayoub on 01/07/2017.
- */
 class CommentsController {
   constructor($http, CommentService) {
     this.$http = $http;

@@ -1,6 +1,3 @@
-/**
- * Created by Ayoub on 01/07/2017.
- */
 exports.config = {
 
   allScriptsTimeout: 11000,
