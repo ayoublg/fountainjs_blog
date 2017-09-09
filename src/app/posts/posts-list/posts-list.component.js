@@ -9,7 +9,6 @@ export const PostsListComponenent = {
       this.$stateParams = $stateParams;
     }
     $onInit() {
-      this.list = 'aa';
       this.response = false;
       this.getPostsList();
     }
@@ -22,7 +21,7 @@ export const PostsListComponenent = {
     addPost(postForm) {
       if (postForm.$valid) {
         this.PostService.add(this.p).then(response => {
-          this.response = 'Post Ajouté : ' + angular.toJson(response.data);
+          this.response = 'Post added : ' + angular.toJson(response.data);
         });
       }
     }

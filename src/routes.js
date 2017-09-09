@@ -17,5 +17,9 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('detailPost', {
       url: '/details/:postId',
       component: 'postDetail'
+    })
+    .state('postsByUser', {
+      url: '/postsByUser/:userId',
+      component: 'postsByUser'
     });
 }

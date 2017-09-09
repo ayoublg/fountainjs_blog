@@ -2,7 +2,7 @@
   <h3>Posts list : </h3>
   <ul>
     <li ng-repeat="post in plist.list track by $index" max-width="200px;">
-      <a ui-sref="detailPost({postId: post.id})">{{post.title}}</a>
+      <a ui-sref="detailPost({postId: post.id})">{{post.title}}</a> (See posts of User : <a ui-sref="postsByUser({userId: post.userId})">{{post.userId}}</a>)
       <div max-width="300px;">{{post.body}}...</div>
     </li>
   </ul>
@@ -14,11 +14,12 @@
   <table>
     <tr>
       <td>
-        Titre :
+        Title :
       </td>
       <td>
         <input type="text" name="title" ng-model="plist.p.title" style="width:300px;" ng-required="true" ng-minlength="10">
-      <p ng-show="postAddForm.title.$invalid && !postAddForm.title.$pristine" class="help-block">title is required and must be > 10 chars</p>
+        <p ng-show="postAddForm.title.$invalid && !postAddForm.title.$pristine" class="help-block">title is required and must be > 10 chars
+      </p>
       </td>
     </tr>
     <tr>
@@ -28,7 +29,9 @@
       <td>
         <textarea name="body" ng-model="plist.p.body" style="width: 500px; height: 150px;" ng-maxlength="200" ng-minlength="10">
         </textarea>
-        <p ng-show="postAddForm.body.$invalid && !postAddForm.body.$pristine" class="help-block">body must be > 10 and < 200 chars</p>
+        <p ng-show="postAddForm.body.$invalid && !postAddForm.body.$pristine" class="help-block">
+          body must be > 10 and < 200 chars
+        </p>
       </td>
     </tr>
   </table>

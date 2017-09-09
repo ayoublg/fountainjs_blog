@@ -1,0 +1,8 @@
+<div class="component">
+  <h2>Posts of User {{$ctrl.userId}}</h2>
+
+     <li ng-repeat="post in $ctrl.posts track by $index" max-width="200px;">
+      <a ui-sref="detailPost({postId: post.id})">{{post.title}}</a>
+      <div max-width="300px;">{{post.body}}...</div>
+    </li>
+</div>
